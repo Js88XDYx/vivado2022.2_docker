@@ -1,5 +1,7 @@
 #!/bin/bash
-PROJECT_PATH=${HOME}/projects
+PROJECT_PATH=${HOME}/ece385
+export DISPLAY=:0
+xhost +local:docker
 docker run -it --rm \
   --net host \
   -e LOCAL_UID=$(id -u ${USER}) \
@@ -16,4 +18,4 @@ docker run -it --rm \
   --device /dev/dri \
   --privileged \
   -w ${HOME} \
-  vivado:2022.1
+  vivado:2022.2
