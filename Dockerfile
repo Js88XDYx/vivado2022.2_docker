@@ -24,7 +24,8 @@ RUN apt-get install -y -qq \
   sudo \
   gosu \
   vim \
-  tmux
+  tmux \
+  gcc
 
 # Requirements for Vivado SDK
 RUN apt-get install -y -qq \
@@ -40,6 +41,8 @@ RUN apt-get install -y -qq \
   libgtk2.0-0 \
   libswt-gtk-4-java \
   xorg
+
+RUN export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Requirements for PetaLinux (Listed here just as a reference, since PetaLinux is not installed)
 # RUN apt-get install -y -qq \
