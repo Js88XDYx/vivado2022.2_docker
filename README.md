@@ -8,7 +8,7 @@ This repository contains a Vivado 2022.2 docker image based on Ubuntu 20.04.
    and place into the directory.
 2. Adapt `install_config.txt` to your likings, or regenerate
    `install_config.txt` by running
-   `./Xilinx_Unified_2022.1_0420_0327_Lin64.bin -- --batch ConfigGen` and
+   `./Xilinx_Unified_2022.2_1014_8888_Lin64.bin -- --batch ConfigGen` and
    copying the generated file into the directory.
 3. Build the docker image by running `./build.sh`.
 4. At the beginning of the `./build.sh` script you need to log in with your
