@@ -1,10 +1,10 @@
-# Vivado 2022.1 Docker image
+# Vivado 2022.2 Docker image
 
-This repository contains a Vivado 2022.1 docker image based on Ubuntu 20.04.
+This repository contains a Vivado 2022.2 docker image based on Ubuntu 20.04.
 
 ## Usage
 
-1. Download the [`Xilinx Unified Installer 2022.1: Linux Self Extracting Web Instaler`](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2022-1.html)
+1. Download the `Xilinx Unified Installer 2022.2: Linux Self Extracting Web Installer`
    and place into the directory.
 2. Adapt `install_config.txt` to your likings, or regenerate
    `install_config.txt` by running
