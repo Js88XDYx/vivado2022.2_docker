@@ -24,13 +24,13 @@ RUN apt-get install -y -qq \
   sudo \
   gosu \
   vim \
-  tmux \
-  gcc
+  tmux 
 
 # Requirements for Vivado SDK
 RUN apt-get install -y -qq \
   libtinfo5 \
-  default-jre
+  default-jre \ 
+  gcc
 
 # Requirements for DocNav
 RUN apt-get install -y -qq \
@@ -40,9 +40,15 @@ RUN apt-get install -y -qq \
 RUN apt-get install -y -qq \
   libgtk2.0-0 \
   libswt-gtk-4-java \
-  xorg
+  xorg \ 
+  dbus-x11 \ 
+  xterm \
+  make
 
 RUN export _JAVA_AWT_WM_NONREPARENTING=1
+RUN export NO_AT_BRIDGE=1 # possibly not necessary but may help prevent dbind warning in Vitis
+RUN sudo chmod 666 /dev/ttyUSB1 # for vitis serial terminal, per https://adaptivesupport.amd.com/s/question/0D52E00006lNCntSAG/how-to-connect-to-vitis-serial-terminal?language=en_US
+                                # Is there a better solution? 
 
 # Requirements for PetaLinux (Listed here just as a reference, since PetaLinux is not installed)
 # RUN apt-get install -y -qq \
