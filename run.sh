@@ -13,9 +13,11 @@ docker run -it --rm \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   -v ${HOME}/.Xauthority:${HOME}/.Xauthority:rw \
   -v ${PROJECT_PATH}:${HOME}/projects:rw \
-  -v /dev/bus/usb:/dev/bus/usb:rw \
+  -v /run/udev:/run/udev:ro \
+  -v /dev:/dev:rw \
   -v /sys:/sys:ro \
-  --device /dev/dri \
-  --privileged \
+  --device-cgroup-rule='c 188:* rmw' \
+  --device=/dev/bus/usb \
+  --device=/dev/dri \
   -w ${HOME} \
   vivado:2022.2
