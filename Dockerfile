@@ -24,9 +24,7 @@ RUN apt-get install -y -qq \
   sudo \
   gosu \
   vim \
-HEAD
   tmux 
-8a3f4b692b5f54f5a941bce8900e91146c28b91a
 
 # Requirements for Vivado SDK
 RUN apt-get install -y -qq \
