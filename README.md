@@ -16,4 +16,11 @@ This repository contains a Vivado 2022.2 docker image based on Ubuntu 20.04.
    installer.
 5. Adjust the `PROJECT_PATH` variable in `run.sh` to mount your project folder
    and run the docker image with `./run.sh`.
-6. Start Vivado from the docker terminal with `vivado`.
+6. Run the following commands (fixes are added to Dockerfile but currently untested on initial-testing branch):
+   ```
+   export _JAVA_AWT_WM_NONREPARENTING=1 # fixes empty white window when Vivado is launched
+   export NO_AT_BRIDGE=1                # possibly not necessary but may help prevent dbind warning in Vitis
+   sudo chmod 666 /dev/ttyUSB1          # allows access to serial port for Vitis serial link
+   sudo apt install gcc dbus-x11 xterm make -y # missing dependencies
+   ```
+7. Start Vivado from the docker terminal with `vivado`.
