@@ -1,5 +1,5 @@
 #!/bin/bash
-PROJECT_PATH=${HOME}/ece385
+PROJECT_PATH=${HOME}/ece385/
 export DISPLAY=:0
 xhost +local:docker
 docker run -it --rm \
@@ -16,7 +16,8 @@ docker run -it --rm \
   -v /run/udev:/run/udev:ro \
   -v /dev:/dev:rw \
   -v /sys:/sys:ro \
-  --device-cgroup-rule='c 188:* rmw' \
+  --device-cgroup-rule='c 166:* rmw' \ # needed for device programming
+  --device-cgroup-rule='c 188:* rmw' \ # needed for Vitis serial monitor
   --device=/dev/bus/usb \
   --device=/dev/dri \
   -w ${HOME} \
