@@ -16,9 +16,12 @@ docker run -it --rm \
   -v /run/udev:/run/udev:ro \
   -v /dev:/dev:rw \
   -v /sys:/sys:ro \
-  --device-cgroup-rule='c 166:* rmw' \ # needed for device programming
-  --device-cgroup-rule='c 188:* rmw' \ # needed for Vitis serial monitor
+  --device-cgroup-rule='c 166:* rmw' \
+  --device-cgroup-rule='c 188:* rmw' \
   --device=/dev/bus/usb \
   --device=/dev/dri \
   -w ${HOME} \
   vivado:2022.2
+
+# cgroup 166 for programming with Vivado
+# cgroup 188 for Vitis serial monitor
