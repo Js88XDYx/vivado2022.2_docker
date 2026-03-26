@@ -24,3 +24,10 @@ This repository contains a Vivado 2022.2 docker image based on Ubuntu 20.04.
    sudo apt install gcc dbus-x11 xterm make -y # missing dependencies
    ```
 7. Start Vivado from the docker terminal with `vivado`.
+
+## Sources
+Hardware access changes follow [arthurfprecht/vivado2025.1_docker](https://github.com/arthurfprecht/vivado2025.1_docker/tree/master).
+
+Other sources referenced for fixes:
+* https://stackoverflow.com/questions/24225647/docker-a-way-to-give-access-to-a-host-usb-or-serial-device
+* https://adaptivesupport.amd.com/s/question/0D52E00006lNCntSAG/how-to-connect-to-vitis-serial-terminal?language=en_US
