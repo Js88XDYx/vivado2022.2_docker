@@ -13,7 +13,7 @@ docker run -it --rm \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   -v ${HOME}/.Xauthority:${HOME}/.Xauthority:rw \
   -v ${PROJECT_PATH}:${HOME}/projects:rw \
-  -v /run/udev:/run/udev:ro \
+  -v /run/udev:/run/udev:rw \
   -v /dev:/dev:rw \
   -v /sys:/sys:ro \
   --device-cgroup-rule='c 166:* rmw' \
