@@ -47,7 +47,7 @@ RUN apt-get install -y -qq \
 
 RUN export _JAVA_AWT_WM_NONREPARENTING=1
 RUN export NO_AT_BRIDGE=1 # possibly not necessary but may help prevent dbind warning in Vitis
-RUN sudo chmod 666 /dev/ttyUSB1 # for vitis serial terminal, per https://adaptivesupport.amd.com/s/question/0D52E00006lNCntSAG/how-to-connect-to-vitis-serial-terminal?language=en_US
+RUN sudo chmod 666 /dev/ttyUSB* # for vitis serial terminal, per https://adaptivesupport.amd.com/s/question/0D52E00006lNCntSAG/how-to-connect-to-vitis-serial-terminal?language=en_US
                                 # Is there a better solution? 
 
 RUN export _JAVA_AWT_WM_NONREPARENTING=1
