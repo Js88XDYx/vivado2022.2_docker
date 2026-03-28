@@ -1,9 +1,7 @@
 FROM ubuntu:20.04
 
-LABEL maintainer "Thierry Delafontaine <delafontaineth@pm.me>"
-
-ARG XLNX_VIVADO_VERSION=2022.1
-ARG XLNX_VIVADO_INSTALLER=Xilinx_Unified_2022.1_0420_0327_Lin64.bin
+ARG XLNX_VIVADO_VERSION=2022.2
+ARG XLNX_VIVADO_INSTALLER=Xilinx_Unified_2022.2_1014_8888_Lin64.bin
 ARG XLNX_VIVADO_AUTH_FILE=wi_authentication_key
 ARG XLNX_VIVADO_BATCH_CONFIG_FILE=install_config.txt
 
@@ -45,12 +43,9 @@ RUN apt-get install -y -qq \
   xterm \
   make
 
-RUN export _JAVA_AWT_WM_NONREPARENTING=1
-RUN export NO_AT_BRIDGE=1 # possibly not necessary but may help prevent dbind warning in Vitis
-RUN sudo chmod 666 /dev/ttyUSB* # for vitis serial terminal, per https://adaptivesupport.amd.com/s/question/0D52E00006lNCntSAG/how-to-connect-to-vitis-serial-terminal?language=en_US
-                                # Is there a better solution? 
-
-RUN export _JAVA_AWT_WM_NONREPARENTING=1
+ENV _JAVA_AWT_WM_NONREPARENTING=1
+ENV NO_AT_BRIDGE=1 
+# ^^ possibly not necessary but may help prevent dbind warning in Vitis
 
 # Requirements for PetaLinux (Listed here just as a reference, since PetaLinux is not installed)
 # RUN apt-get install -y -qq \
