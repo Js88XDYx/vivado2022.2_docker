@@ -45,7 +45,7 @@ RUN apt-get install -y -qq \
 
 ENV _JAVA_AWT_WM_NONREPARENTING=1
 ENV NO_AT_BRIDGE=1 
-# ^^ possibly not necessary but may help prevent dbind warning in Vitis
+# ^^ NO_AT_BRIDGE is possibly not necessary but may help prevent dbind warning in Vitis
 
 # Requirements for PetaLinux (Listed here just as a reference, since PetaLinux is not installed)
 # RUN apt-get install -y -qq \

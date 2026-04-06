@@ -15,7 +15,7 @@ This repository contains a Vivado 2022.2 docker image based on Ubuntu 20.04.
    copying the generated file into the directory.
 3. Build the docker image by running `./build.sh`.
 4. At the beginning of the `./build.sh` script you need to log in with your
-   Xilinx credentials in order to create a authenication token for the web
+   Xilinx credentials in order to create an authenication token for the web
    installer.
 5. Wait. Probably for about an hour.
 6. Adjust the `PROJECT_PATH` variable in `run.sh` to the location for your 
