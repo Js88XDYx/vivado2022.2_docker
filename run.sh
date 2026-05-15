@@ -1,5 +1,5 @@
 #!/bin/bash
-PROJECT_PATH=${HOME}/ece385/
+PROJECT_PATH=${HOME}/vivado_projects/
 export DISPLAY=:0
 xhost +local:docker
 docker run -it --rm \

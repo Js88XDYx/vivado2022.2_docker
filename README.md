@@ -1,6 +1,7 @@
 # Vivado 2022.2 Docker image
 
-This repository contains a Vivado 2022.2 docker image based on Ubuntu 20.04.
+This repository contains a Vivado 2022.2 docker image based on Ubuntu 20.04. 
+It is an adaptation of delafthi's verion for 2022.1 at https://github.com/delafthi/vivado2022.1_docker/tree/master.
 
 ## Usage
 ### Building the image
@@ -23,6 +24,8 @@ This repository contains a Vivado 2022.2 docker image based on Ubuntu 20.04.
    
 
 ### Running Vivado/Vitis
+0. For device programming and serial read, plug the device in *before* starting
+   the container.
 1. Run the docker image with `./run.sh`.
 2. Start Vivado from the docker terminal with `vivado` or Vitis with `vitis`.
 3. For Vitis Serial Terminal to be able to read from the device it may be 
@@ -30,8 +33,6 @@ This repository contains a Vivado 2022.2 docker image based on Ubuntu 20.04.
    ```
    sudo chmod 666 /dev/ttyUSB*
    ```
-   Note: There may be (and probably is) a better way to do this, 
-   probably something to do with udev rules, but this was the thing that worked first. 
 4. Sudo password: <username\>  
    Root password: root
    
